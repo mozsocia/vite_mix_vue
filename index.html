@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Form</title>
+</head>
+<body>
+  <div class="product-form">
+    <form @submit.prevent="submitForm">
+      <div>
+        <label for="name">Product Name:</label>
+        <input type="text" id="name" v-model="product.name">
+      </div>
+      <div>
+        <label for="price">Price:</label>
+        <input type="number" id="price" v-model="product.price">
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <textarea id="description" v-model="product.description"></textarea>
+      </div>
+      <button type="submit">Add Product</button>
+      
+      <p v-if="successMessage" style="color: green;">{{ successMessage }}</p>
+      <p v-if="errorMessage" style="color: red;">{{ errorMessage }}</p>
+    </form>
+  </div>
+
+  <script type="module" src="/src/app.js"></script>
+</body>
+</html>
